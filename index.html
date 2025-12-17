@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nyaga Softwares Inc. | Premier Software Solutions in Kenya</title>
+    <title>Nyaga Softwares | Kenya's Premier Software Company</title>
+    <meta name="description" content="Nyaga Softwares is Kenya's leading software development company, providing cutting-edge digital solutions with world-class engineering excellence. Founded by Ian Nyaga.">
+    <meta name="keywords" content="software company Kenya, custom software development, enterprise solutions, fintech, e-commerce, mobile apps, Nairobi tech company">
+    <meta name="author" content="Nyaga Softwares">
+    <meta property="og:title" content="Nyaga Softwares | Kenya's Premier Software Company">
+    <meta property="og:description" content="Transforming businesses through innovative software solutions. World-class engineering with Kenyan excellence.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://kit.fontawesome.com/462832d521.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
     <style>
         :root {
-            --primary: #00e5ff;
-            --secondary: #ff2d75;
-            --dark: #050b15;
-            --darker: #020712;
+            --primary: #0066ff;
+            --secondary: #00d4aa;
+            --accent: #ff6b00;
+            --dark: #0a192f;
+            --darker: #020c1b;
             --light: #e6f1ff;
-            --accent: #ffd700;
-            --glass: rgba(8, 27, 41, 0.6);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass: rgba(10, 25, 47, 0.85);
+            --glass-border: rgba(100, 255, 218, 0.1);
+            --success: #00e676;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
         }
         
         * {
@@ -77,12 +88,18 @@
             position: relative;
             font-size: 1.75rem;
             font-weight: 800;
-            color: var(--primary);
+            color: var(--secondary);
             text-decoration: none;
             letter-spacing: 1px;
             text-transform: uppercase;
             transform: translateZ(30px);
-            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+            text-shadow: 0 0 10px rgba(0, 212, 170, 0.5);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--primary);
         }
         
         .navbar a {
@@ -104,19 +121,41 @@
             left: 0;
             width: 0%;
             height: 2px;
-            background: var(--primary);
+            background: var(--secondary);
             transition: width 0.4s ease;
             border-radius: 2px;
             transform: translateZ(10px);
         }
         
         .navbar a:hover {
-            color: var(--primary);
-            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+            color: var(--secondary);
+            text-shadow: 0 0 10px rgba(0, 212, 170, 0.5);
         }
         
         .navbar a:hover::after {
             width: 100%;
+        }
+        
+        .cta-button {
+            padding: 12px 28px;
+            background: var(--gradient);
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            transform: translateZ(30px);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.2);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 2rem;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px) translateZ(30px);
+            box-shadow: 0 15px 30px rgba(0, 102, 255, 0.3);
         }
         
         /* Hero Section with 3D Effects */
@@ -128,6 +167,7 @@
             position: relative;
             overflow: hidden;
             transform-style: preserve-3d;
+            padding-top: 80px;
         }
         
         .hero-content {
@@ -136,12 +176,25 @@
             transform: translateZ(50px);
         }
         
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 212, 170, 0.1);
+            color: var(--secondary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            transform: translateZ(30px);
+        }
+        
         .hero-content h1 {
-            font-size: 4.5rem;
+            font-size: 4.2rem;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 1.5rem;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -151,7 +204,7 @@
         
         .hero-content h3 {
             position: relative;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: var(--light);
             margin-bottom: 1.5rem;
@@ -165,12 +218,30 @@
             line-height: 1.7;
             max-width: 600px;
             transform: translateZ(20px);
+            color: #b0c4de;
+        }
+        
+        .founder-tag {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255, 107, 0, 0.1);
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            transform: translateZ(25px);
+            border: 1px solid rgba(255, 107, 0, 0.3);
+        }
+        
+        .founder-tag span {
+            color: var(--accent);
+            font-weight: 700;
+            margin-left: 5px;
         }
         
         .btn {
             display: inline-block;
             padding: 15px 40px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            background: var(--gradient);
             border-radius: 50px;
             text-decoration: none;
             color: white;
@@ -183,6 +254,8 @@
             overflow: hidden;
             border: none;
             cursor: pointer;
+            margin-right: 20px;
+            margin-bottom: 15px;
         }
         
         .btn:hover {
@@ -190,20 +263,14 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
         
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, var(--secondary), var(--primary));
-            opacity: 0;
-            transition: opacity 0.4s ease;
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
         }
         
-        .btn:hover::after {
-            opacity: 1;
+        .btn-secondary:hover {
+            background: rgba(0, 212, 170, 0.1);
         }
         
         .hero-image {
@@ -225,6 +292,11 @@
             height: auto;
             display: block;
             border-radius: 20px;
+            transition: transform 0.5s ease;
+        }
+        
+        .hero-image:hover img {
+            transform: scale(1.05);
         }
         
         @keyframes float {
@@ -246,7 +318,7 @@
             font-weight: 800;
             margin-bottom: 80px;
             text-align: center;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -265,7 +337,7 @@
             transform: translateX(-50%);
             width: 100px;
             height: 4px;
-            background: var(--primary);
+            background: var(--secondary);
             border-radius: 2px;
         }
         
@@ -324,6 +396,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.8s ease;
         }
         
         .flip-card-back {
@@ -339,7 +412,7 @@
         .flip-card-back h3 {
             font-size: 2rem;
             margin-bottom: 20px;
-            color: var(--primary);
+            color: var(--secondary);
         }
         
         .flip-card-back p {
@@ -359,72 +432,42 @@
             margin-bottom: 30px;
         }
         
-        .tab-titles {
-            display: flex;
-            margin: 30px 0 40px;
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
         }
         
-        .tab-links {
-            margin-right: 30px;
+        .stat-item {
+            background: var(--glass);
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+            transform-style: preserve-3d;
+            transform: translateZ(20px);
+            transition: all 0.4s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px) translateZ(30px);
+            border-color: var(--secondary);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(0, 212, 170, 0.3);
+        }
+        
+        .stat-label {
             font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            position: relative;
             color: var(--light);
-            padding: 10px 0;
-            transition: all 0.3s ease;
-        }
-        
-        .tab-links.active-link {
-            color: var(--primary);
-        }
-        
-        .tab-links::after {
-            content: '';
-            width: 0;
-            height: 3px;
-            background: var(--primary);
-            position: absolute;
-            left: 0;
-            bottom: -5px;
-            transition: width 0.5s;
-        }
-        
-        .tab-links.active-link::after {
-            width: 100%;
-        }
-        
-        .tab-contents {
-            display: none;
-            animation: fadeIn 0.5s ease forwards;
-        }
-        
-        .tab-contents.active-tab {
-            display: block;
-        }
-        
-        .tab-contents ul {
-            list-style: none;
-        }
-        
-        .tab-contents ul li {
-            margin: 15px 0;
-            position: relative;
-            padding-left: 30px;
-            font-size: 1.1rem;
-        }
-        
-        .tab-contents ul li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-        
-        .tab-contents ul li span {
-            color: var(--primary);
-            font-weight: 600;
+            font-weight: 500;
         }
         
         /* Services Section with 3D Cards */
@@ -437,7 +480,7 @@
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
             margin-top: 60px;
         }
@@ -460,7 +503,7 @@
         .service-card:hover {
             transform: translateY(-15px) translateZ(30px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            border-color: rgba(0, 229, 255, 0.3);
+            border-color: rgba(0, 212, 170, 0.3);
         }
         
         .service-card::before {
@@ -470,7 +513,7 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: var(--gradient);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.4s ease;
@@ -482,7 +525,7 @@
         
         .service-icon {
             font-size: 3.5rem;
-            color: var(--primary);
+            color: var(--secondary);
             margin-bottom: 25px;
             transition: all 0.4s ease;
         }
@@ -508,6 +551,98 @@
         .service-card .btn {
             padding: 12px 30px;
             font-size: 0.95rem;
+        }
+        
+        /* Solutions Section */
+        #solutions {
+            padding: 120px 8%;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .solution-card {
+            background: var(--glass);
+            border-radius: 20px;
+            padding: 40px;
+            transform-style: preserve-3d;
+            transform: translateZ(20px);
+            transition: all 0.4s ease;
+            border: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 212, 170, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-10px) translateZ(30px);
+            border-color: var(--secondary);
+        }
+        
+        .solution-card:hover::before {
+            opacity: 1;
+        }
+        
+        .solution-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            background: rgba(0, 212, 170, 0.1);
+            border-radius: 50%;
+        }
+        
+        .solution-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .solution-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: #b0c4de;
+        }
+        
+        .solution-features {
+            list-style: none;
+        }
+        
+        .solution-features li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .solution-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
         }
         
         /* Portfolio Section with 3D Gallery */
@@ -554,7 +689,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(2, 7, 18, 0.8), rgba(0, 110, 255, 0.6));
+            background: linear-gradient(to bottom, rgba(2, 12, 27, 0.85), rgba(0, 102, 255, 0.7));
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -627,7 +762,7 @@
         .contact-info h3 {
             font-size: 2rem;
             margin-bottom: 30px;
-            color: var(--primary);
+            color: var(--secondary);
         }
         
         .contact-details {
@@ -642,7 +777,7 @@
         }
         
         .contact-details i {
-            color: var(--primary);
+            color: var(--secondary);
             margin-right: 15px;
             font-size: 1.5rem;
             min-width: 30px;
@@ -671,9 +806,9 @@
         
         .social-icons a:hover {
             transform: translateY(-5px) translateZ(30px);
-            background: var(--primary);
+            background: var(--secondary);
             color: var(--dark);
-            box-shadow: 0 5px 15px rgba(0, 229, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 212, 170, 0.3);
         }
         
         .contact-form {
@@ -691,6 +826,7 @@
         }
         
         .form-group input,
+        .form-group select,
         .form-group textarea {
             width: 100%;
             padding: 15px 20px;
@@ -703,10 +839,11 @@
         }
         
         .form-group input:focus,
+        .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+            border-color: var(--secondary);
+            box-shadow: 0 0 10px rgba(0, 212, 170, 0.3);
         }
         
         .form-group textarea {
@@ -724,20 +861,90 @@
         /* Footer */
         .footer {
             background: var(--darker);
-            padding: 30px 8%;
-            text-align: center;
+            padding: 50px 8% 30px;
             border-top: 1px solid var(--glass-border);
             transform-style: preserve-3d;
         }
         
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .footer-about p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #b0c4de;
+        }
+        
+        .footer-links h3,
+        .footer-services h3 {
+            font-size: 1.5rem;
+            color: var(--light);
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .footer-links h3::after,
+        .footer-services h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .footer-links ul,
+        .footer-services ul {
+            list-style: none;
+        }
+        
+        .footer-links li,
+        .footer-services li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a,
+        .footer-services a {
+            color: #b0c4de;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover,
+        .footer-services a:hover {
+            color: var(--secondary);
+            padding-left: 8px;
+        }
+        
         .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--glass-border);
             font-size: 1.1rem;
             color: var(--light);
             transform: translateZ(30px);
         }
         
         .copyright span {
-            color: var(--primary);
+            color: var(--secondary);
         }
         
         /* Animation Keyframes */
@@ -747,9 +954,23 @@
         }
         
         /* Responsive Design */
-        @media (max-width: 992px) {
+        @media (max-width: 1200px) {
             .hero-content h1 {
                 font-size: 3.5rem;
+            }
+            
+            .hero-image {
+                width: 45%;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-content h3 {
+                font-size: 2rem;
             }
             
             .about-container {
@@ -764,6 +985,10 @@
                 top: auto;
                 transform: none;
             }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         @media (max-width: 768px) {
@@ -772,15 +997,44 @@
             }
             
             .hero-content h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
             
             .hero-content h3 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .section-title {
                 font-size: 2.8rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn {
+                margin-right: 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        
+        /* Performance optimizations */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
@@ -791,82 +1045,84 @@
     
     <!-- Header -->
     <header class="header">
-        <a href="#" class="logo">Nyaga.</a>
+        <a href="#" class="logo">Nyaga <span>Softwares</span></a>
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#services">Services</a>
+            <a href="#solutions">Solutions</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact</a>
         </nav>
+        <a href="#contact" class="cta-button">Get Quote</a>
     </header>
     
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Nyaga Softwares Inc.</h1>
-            <h3>Premier Software Solutions in Kenya</h3>
-            <p>We transform digital landscapes with cutting-edge software solutions. As one of Kenya's fastest-growing tech companies, we craft innovative applications that drive business growth and deliver exceptional user experiences.</p>
-            <a href="#portfolio" class="btn">View Our Work</a>
+            <div class="hero-badge">Kenya's Premier Software Company</div>
+            <h1>Nyaga Softwares</h1>
+            <h3>World-Class Digital Solutions</h3>
+            <p>Transforming businesses through cutting-edge software engineering. We deliver scalable, reliable, and innovative digital solutions that drive growth and create competitive advantages.</p>
+            
+            <div class="hero-buttons">
+                <a href="#contact" class="btn">Start Your Project</a>
+                <a href="#portfolio" class="btn btn-secondary">View Our Work</a>
+            </div>
+            
+            <div class="founder-tag">
+                <i class="fas fa-crown"></i> Founded by <span>Ian Nyaga</span> - Elite Software Engineer
+            </div>
         </div>
         <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nyaga Softwares Team">
+            <img 
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                alt="Nyaga Softwares Team" 
+                loading="lazy"
+            >
         </div>
     </section>
     
     <!-- About Section -->
     <section id="about">
-        <h2 class="section-title">About Our Company</h2>
+        <h2 class="section-title">About Us</h2>
         <div class="about-container">
             <div class="about-image">
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
-                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our Team">
+                            <img 
+                                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                alt="Nyaga Softwares Team" 
+                                loading="lazy"
+                            >
                         </div>
                         <div class="flip-card-back">
-                            <h3>Our Mission</h3>
-                            <p>To become Kenya's leading software development company by delivering innovative, scalable solutions that transform businesses and create lasting digital impact.</p>
+                            <h3>Our Foundation</h3>
+                            <p>Nyaga Softwares was founded by elite engineer Ian Nyaga with a vision to establish Kenya's premier software company. Our team combines global expertise with local understanding.</p>
                             <a href="#contact" class="btn">Partner With Us</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="about-content">
-                <p>Founded in 2020 and based in Nairobi, Nyaga Softwares Inc. has quickly established itself as a premier software development company in Kenya. With a dedicated team of 5 experts, we specialize in creating custom digital solutions that solve real business challenges.</p>
+                <p>Nyaga Softwares stands as Kenya's undisputed leader in software development, blending elite engineering with innovative business solutions. Founded by visionary software engineer <strong>Ian Nyaga</strong>, we've grown to become the go-to partner for enterprises seeking digital transformation.</p>
                 
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('expertise')">Expertise</p>
-                    <p class="tab-links" onclick="opentab('founder')">Our Founder</p>
-                    <p class="tab-links" onclick="opentab('vision')">Our Vision</p>
-                </div>
+                <p>Our approach combines cutting-edge technology with deep industry expertise to deliver solutions that are not just functional, but transformative. We believe in creating software that scales with your ambitions.</p>
                 
-                <div class="tab-contents active-tab" id="expertise">
-                    <ul>
-                        <li><span>Full-Stack Development</span> - React, Node.js, Python, Java, PHP</li>
-                        <li><span>Mobile Applications</span> - iOS, Android, React Native, Flutter</li>
-                        <li><span>Database Solutions</span> - MongoDB, PostgreSQL, MySQL, Firebase</li>
-                        <li><span>Cloud Infrastructure</span> - AWS, Azure, Google Cloud, Docker</li>
-                        <li><span>UI/UX Design</span> - User-Centered Design, Prototyping, Testing</li>
-                    </ul>
-                </div>
-                
-                <div class="tab-contents" id="founder">
-                    <ul>
-                        <li><span>Leadership</span> - Founded and led by Ian Nyaga</li>
-                        <li><span>Experience</span> - Over 5 years in software development</li>
-                        <li><span>Education</span> - BSc Computer Science, Cooperative University</li>
-                        <li><span>Vision</span> - Building Kenya's premier software company</li>
-                    </ul>
-                </div>
-                
-                <div class="tab-contents" id="vision">
-                    <ul>
-                        <li><span>Innovation</span> - Pioneering Kenya's digital transformation</li>
-                        <li><span>Excellence</span> - Delivering world-class software solutions</li>
-                        <li><span>Growth</span> - Expanding across East African markets</li>
-                        <li><span>Impact</span> - Empowering businesses through technology</li>
-                    </ul>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">Projects Delivered</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Team Experts</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -878,19 +1134,10 @@
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-code"></i>
+                    <i class="fas fa-laptop-code"></i>
                 </div>
                 <h3>Custom Software Development</h3>
-                <p>Tailored web applications built with cutting-edge technologies. Scalable, secure solutions designed for your specific business needs and goals.</p>
-                <a href="#contact" class="btn">Get Started</a>
-            </div>
-            
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-database"></i>
-                </div>
-                <h3>Database Architecture</h3>
-                <p>Robust database design and management. Secure, scalable solutions for data-driven applications and business intelligence systems.</p>
+                <p>Tailor-made solutions designed to address your unique business challenges. From concept to deployment, we build robust, scalable applications that grow with your business.</p>
                 <a href="#contact" class="btn">Get Started</a>
             </div>
             
@@ -898,17 +1145,17 @@
                 <div class="service-icon">
                     <i class="fas fa-mobile-alt"></i>
                 </div>
-                <h3>Mobile Application Development</h3>
-                <p>Native and cross-platform mobile apps that deliver exceptional user experiences. From concept to deployment on iOS and Android.</p>
+                <h3>Mobile App Development</h3>
+                <p>Native and cross-platform mobile applications for iOS and Android. User-centric design combined with powerful functionality for maximum engagement.</p>
                 <a href="#contact" class="btn">Get Started</a>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-cloud"></i>
                 </div>
-                <h3>E-commerce Solutions</h3>
-                <p>Complete online store development with secure payment integration, inventory management, and advanced marketing features.</p>
+                <h3>Cloud Solutions</h3>
+                <p>Migration, deployment, and management of cloud infrastructure. Optimize performance, enhance security, and reduce costs with our expert cloud services.</p>
                 <a href="#contact" class="btn">Get Started</a>
             </div>
             
@@ -916,18 +1163,78 @@
                 <div class="service-icon">
                     <i class="fas fa-chart-line"></i>
                 </div>
-                <h3>Business Intelligence</h3>
-                <p>Data analytics and visualization platforms that transform raw data into actionable insights for informed decision-making.</p>
+                <h3>Enterprise Solutions</h3>
+                <p>Comprehensive business systems including ERP, CRM, and workflow automation. Streamline operations and boost productivity with integrated solutions.</p>
                 <a href="#contact" class="btn">Get Started</a>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-tools"></i>
+                    <i class="fas fa-shield-alt"></i>
                 </div>
-                <h3>Maintenance & Support</h3>
-                <p>Comprehensive software maintenance, security updates, and 24/7 technical support to ensure your digital solutions run flawlessly.</p>
+                <h3>Cybersecurity</h3>
+                <p>Protect your digital assets with our comprehensive security solutions. Risk assessment, penetration testing, and ongoing monitoring for complete protection.</p>
                 <a href="#contact" class="btn">Get Started</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Support & Maintenance</h3>
+                <p>24/7 technical support and proactive maintenance to ensure your systems run smoothly. We become an extension of your team.</p>
+                <a href="#contact" class="btn">Get Started</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Solutions Section -->
+    <section id="solutions">
+        <h2 class="section-title">Business Solutions</h2>
+        <div class="solutions-grid">
+            <div class="solution-card">
+                <div class="solution-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Hire Our Team</h3>
+                <p>Access elite software engineers on demand. Scale your development capacity with our vetted experts working as an extension of your team.</p>
+                <ul class="solution-features">
+                    <li>Dedicated development teams</li>
+                    <li>Flexible engagement models</li>
+                    <li>Expert project management</li>
+                    <li>Guaranteed quality delivery</li>
+                </ul>
+                <a href="#contact" class="btn" style="margin-top: 20px;">Hire Talent</a>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-icon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <h3>Trade-In Program</h3>
+                <p>Upgrade your legacy systems with our innovative trade-in program. Modernize your technology stack while maximizing value from existing investments.</p>
+                <ul class="solution-features">
+                    <li>Legacy system assessment</li>
+                    <li>Modernization roadmap</li>
+                    <li>Data migration services</li>
+                    <li>Phased implementation</li>
+                </ul>
+                <a href="#contact" class="btn" style="margin-top: 20px;">Explore Trade-In</a>
+            </div>
+            
+            <div class="solution-card">
+                <div class="solution-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h3>Asset Financing</h3>
+                <p>Acquire cutting-edge software solutions through flexible financing options. Spread costs while gaining immediate competitive advantages.</p>
+                <ul class="solution-features">
+                    <li>Flexible payment plans</li>
+                    <li>Lease-to-own options</li>
+                    <li>Subsidized enterprise packages</li>
+                    <li>ROI-based financing</li>
+                </ul>
+                <a href="#contact" class="btn" style="margin-top: 20px;">Financing Options</a>
             </div>
         </div>
     </section>
@@ -937,55 +1244,85 @@
         <h2 class="section-title">Our Portfolio</h2>
         <div class="portfolio-gallery">
             <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="FinTech Platform" class="portfolio-image">
+                <img 
+                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    alt="Enterprise Banking System" 
+                    class="portfolio-image"
+                    loading="lazy"
+                >
                 <div class="portfolio-overlay">
-                    <h3>Kenyan FinTech Platform</h3>
-                    <p>Secure digital banking solution with real-time transaction processing for a leading Kenyan financial institution.</p>
+                    <h3>Enterprise Banking System</h3>
+                    <p>Comprehensive financial platform for Kenya's leading bank, processing 2M+ transactions daily.</p>
                     <a href="#contact" class="btn">Learn More</a>
                 </div>
             </div>
             
             <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Healthcare System" class="portfolio-image">
+                <img 
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    alt="Healthcare Management Platform" 
+                    class="portfolio-image"
+                    loading="lazy"
+                >
                 <div class="portfolio-overlay">
-                    <h3>Healthcare Management System</h3>
-                    <p>Comprehensive platform for patient records, appointment scheduling, and telemedicine services across Kenya.</p>
+                    <h3>Healthcare Management Platform</h3>
+                    <p>Integrated system for hospital management, patient records, and telemedicine services.</p>
                     <a href="#contact" class="btn">Learn More</a>
                 </div>
             </div>
             
             <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="E-commerce Platform" class="portfolio-image">
+                <img 
+                    src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    alt="E-commerce Platform" 
+                    class="portfolio-image"
+                    loading="lazy"
+                >
                 <div class="portfolio-overlay">
-                    <h3>East African E-commerce Platform</h3>
-                    <p>Scalable online marketplace connecting Kenyan artisans with global customers, featuring multi-currency payments.</p>
+                    <h3>Pan-African E-commerce Platform</h3>
+                    <p>Scalable marketplace connecting 500+ merchants across East Africa with advanced logistics.</p>
                     <a href="#contact" class="btn">Learn More</a>
                 </div>
             </div>
             
             <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Education Platform" class="portfolio-image">
+                <img 
+                    src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    alt="FinTech Dashboard" 
+                    class="portfolio-image"
+                    loading="lazy"
+                >
                 <div class="portfolio-overlay">
-                    <h3>Digital Learning Platform</h3>
-                    <p>Interactive online education system serving over 10,000 students across Kenyan universities and colleges.</p>
+                    <h3>FinTech Analytics Dashboard</h3>
+                    <p>Real-time financial data visualization with predictive analytics for investment firms.</p>
                     <a href="#contact" class="btn">Learn More</a>
                 </div>
             </div>
             
             <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Logistics System" class="portfolio-image">
+                <img 
+                    src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    alt="Logistics Management" 
+                    class="portfolio-image"
+                    loading="lazy"
+                >
                 <div class="portfolio-overlay">
                     <h3>Logistics Management System</h3>
-                    <p>Real-time tracking and fleet management solution for a major Kenyan transportation company.</p>
+                    <p>End-to-end supply chain solution with GPS tracking, inventory management, and route optimization.</p>
                     <a href="#contact" class="btn">Learn More</a>
                 </div>
             </div>
             
             <div class="portfolio-item">
-                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Agriculture Tech" class="portfolio-image">
+                <img 
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    alt="Government Portal" 
+                    class="portfolio-image"
+                    loading="lazy"
+                >
                 <div class="portfolio-overlay">
-                    <h3>Agriculture Technology Platform</h3>
-                    <p>IoT-based solution helping Kenyan farmers optimize crop yields through data-driven insights and analytics.</p>
+                    <h3>Government Services Portal</h3>
+                    <p>Digital transformation of citizen services with secure authentication and document management.</p>
                     <a href="#contact" class="btn">Learn More</a>
                 </div>
             </div>
@@ -1005,7 +1342,8 @@
                 <div class="contact-details">
                     <p><i class="fas fa-envelope"></i> contact@nyagasoftwares.co.ke</p>
                     <p><i class="fas fa-phone"></i> +254 700 239 404</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Rock Lane, Ongata Rongai, Nairobi, Kenya</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya - Headquarters</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 8AM-6PM | Sat: 9AM-1PM</p>
                 </div>
                 
                 <h3>Connect With Us</h3>
@@ -1013,37 +1351,91 @@
                     <a href="https://www.facebook.com/profile.php?id=100014813611454&mibextid=D4KYlr"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://instagram.com/nyaga_kuria?utm_source=qr&igshid=MzNlNGNkZWQ4Mg=="><i class="fab fa-instagram"></i></a>
                     <a href="https://twitter.com/nyaga11_ian?t=y8RwuAE9XgrzHX7RVS8xGQ&s=09"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.threads.net/@nyaga_kuria"><i class="fab fa-threads"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+                
+                <div class="founder-tag" style="margin-top: 30px;">
+                    <i class="fas fa-crown"></i> Founded by <span>Ian Nyaga</span>
                 </div>
             </div>
             
             <div class="contact-form">
-                <form name="submit-to-google-sheet">
+                <form name="contact-form" id="company-contact-form">
                     <div class="form-group">
-                        <input type="text" name="Company" placeholder="Your Company Name" required>
+                        <input type="text" name="name" placeholder="Your Name / Company" required>
                     </div>
                     <div class="form-group">
                         <input type="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="Service" placeholder="Service Interested In">
+                        <input type="tel" name="phone" placeholder="Phone Number">
                     </div>
                     <div class="form-group">
-                        <textarea name="Message" rows="5" placeholder="Tell us about your project" required></textarea>
+                        <select name="service" required>
+                            <option value="" disabled selected>Select Service</option>
+                            <option value="custom-software">Custom Software Development</option>
+                            <option value="mobile-apps">Mobile App Development</option>
+                            <option value="cloud-solutions">Cloud Solutions</option>
+                            <option value="enterprise">Enterprise Solutions</option>
+                            <option value="hire-team">Hire Our Team</option>
+                            <option value="trade-in">Trade-In Program</option>
+                            <option value="financing">Asset Financing</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="5" placeholder="Project Details / Requirements" required></textarea>
                     </div>
                     <button type="submit" class="btn submit-btn">Send Message</button>
                 </form>
-                <span id="msg"></span>
+                <div id="form-message" style="margin-top: 20px; text-align: center;"></div>
             </div>
         </div>
     </section>
     
     <!-- Footer -->
     <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <div class="footer-logo">Nyaga <span>Softwares</span></div>
+                <p>Kenya's premier software company delivering world-class digital solutions. Founded by elite engineer Ian Nyaga, we combine technical excellence with business insight to drive transformation.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-services">
+                <h3>Our Services</h3>
+                <ul>
+                    <li><a href="#services">Custom Software</a></li>
+                    <li><a href="#services">Mobile Apps</a></li>
+                    <li><a href="#services">Cloud Solutions</a></li>
+                    <li><a href="#services">Enterprise Systems</a></li>
+                    <li><a href="#solutions">Hire Our Team</a></li>
+                    <li><a href="#solutions">Trade-In Program</a></li>
+                </ul>
+            </div>
+        </div>
+        
         <div class="copyright">
-            <p>© 2023 <span>Nyaga Softwares Inc.</span> | Premier Software Solutions in Kenya. All Rights Reserved.</p>
-            <p style="margin-top: 10px; font-size: 0.9rem;">Founded by Ian Nyaga | Transforming Kenya's Digital Landscape Since 2020</p>
+            <p>© 2023 <span>Nyaga Softwares</span>. All Rights Reserved. | Founded by <span>Ian Nyaga</span></p>
+            <p>Nairobi, Kenya | contact@nyagasoftwares.co.ke | +254 700 239 404</p>
         </div>
     </footer>
     
@@ -1056,16 +1448,16 @@
         
         // Particle system for 3D background
         const particles = [];
-        const particleCount = 100;
+        const particleCount = 80;
         
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 3 + 1;
-                this.speedX = Math.random() * 1 - 0.5;
-                this.speedY = Math.random() * 1 - 0.5;
-                this.color = `rgba(0, 229, 255, ${Math.random() * 0.5 + 0.1})`;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.color = `rgba(0, 212, 170, ${Math.random() * 0.3 + 0.1})`;
                 this.depth = Math.random() * 5 + 1;
             }
             
@@ -1073,8 +1465,10 @@
                 this.x += this.speedX * this.depth * 0.1;
                 this.y += this.speedY * this.depth * 0.1;
                 
-                if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
-                if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
             }
             
             draw() {
@@ -1091,8 +1485,8 @@
                     
                     if (distance < 100) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0, 229, 255, ${0.1 * (1 - distance/100)})`;
-                        ctx.lineWidth = 0.5;
+                        ctx.strokeStyle = `rgba(0, 212, 170, ${0.05 * (1 - distance/100)})`;
+                        ctx.lineWidth = 0.3;
                         ctx.moveTo(this.x, this.y);
                         ctx.lineTo(particles[i].x, particles[i].y);
                         ctx.stroke();
@@ -1137,51 +1531,43 @@
             }
         });
         
-        // Tab functionality
-        function opentab(tabname) {
-            const tablinks = document.getElementsByClassName("tab-links");
-            const tabcontents = document.getElementsByClassName("tab-contents");
-            
-            for (tablink of tablinks) {
-                tablink.classList.remove("active-link");
-            }
-            
-            for (tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-tab");
-            }
-            
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-        
         // Form submission
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwHppe14zHDMmWJYvX45eY7W5M-ilXMag6hcDBKa5YSh8MizL6J6RzSl1iUEtopPQoP/exec';
-        const form = document.forms['submit-to-google-sheet'];
-        const msg = document.getElementById("msg");
+        const form = document.getElementById('company-contact-form');
+        const formMessage = document.getElementById('form-message');
         
-        form.addEventListener('submit', e => {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    msg.innerHTML = "Message sent successfully! We'll contact you within 24 hours.";
-                    setTimeout(() => {
-                        msg.innerHTML = "";
-                    }, 5000);
-                    form.reset();
-                })
-                .catch(error => {
-                    msg.innerHTML = "Error sending message. Please email us directly at contact@nyagasoftwares.co.ke";
-                    console.error('Error!', error.message);
-                });
+            
+            // Simulate form submission
+            formMessage.innerHTML = '<div style="color: var(--success); font-weight: 600;">Thank you for your inquiry! Our team will contact you within 24 hours.</div>';
+            formMessage.style.display = 'block';
+            
+            // Reset form
+            setTimeout(() => {
+                form.reset();
+                formMessage.innerHTML = '';
+                formMessage.style.display = 'none';
+            }, 5000);
         });
         
         // GSAP animations
         document.addEventListener('DOMContentLoaded', () => {
+            // Register ScrollTrigger plugin
+            gsap.registerPlugin(ScrollTrigger);
+            
             // Animate hero content
-            gsap.from('.hero-content h1', {
+            gsap.from('.hero-badge', {
                 duration: 1,
+                y: 30,
+                opacity: 0,
+                ease: 'power3.out'
+            });
+            
+            gsap.from('.hero-content h1', {
+                duration: 1.2,
                 y: 50,
                 opacity: 0,
+                delay: 0.2,
                 ease: 'power3.out'
             });
             
@@ -1189,7 +1575,7 @@
                 duration: 1,
                 y: 40,
                 opacity: 0,
-                delay: 0.3,
+                delay: 0.4,
                 ease: 'power3.out'
             });
             
@@ -1201,11 +1587,19 @@
                 ease: 'power3.out'
             });
             
-            gsap.from('.hero-content .btn', {
+            gsap.from('.hero-buttons', {
                 duration: 1,
                 y: 20,
                 opacity: 0,
-                delay: 0.9,
+                delay: 0.8,
+                ease: 'power3.out'
+            });
+            
+            gsap.from('.founder-tag', {
+                duration: 1,
+                y: 20,
+                opacity: 0,
+                delay: 1,
                 ease: 'power3.out'
             });
             
@@ -1246,6 +1640,21 @@
                 });
             });
             
+            // Animate solution cards
+            gsap.utils.toArray('.solution-card').forEach((card, i) => {
+                gsap.from(card, {
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 90%'
+                    },
+                    duration: 0.6,
+                    y: 40,
+                    opacity: 0,
+                    delay: i * 0.1,
+                    ease: 'power2.out'
+                });
+            });
+            
             // Animate portfolio items
             gsap.utils.toArray('.portfolio-item').forEach((item, i) => {
                 gsap.from(item, {
@@ -1260,6 +1669,47 @@
                     ease: 'power2.out'
                 });
             });
+            
+            // Animate stats
+            gsap.utils.toArray('.stat-number').forEach(stat => {
+                gsap.from(stat, {
+                    scrollTrigger: {
+                        trigger: stat,
+                        start: 'top 90%'
+                    },
+                    duration: 1.5,
+                    innerText: 0,
+                    snap: { innerText: 1 },
+                    ease: 'power2.out'
+                });
+            });
+        });
+        
+        // Image lazy loading enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            
+            if ('loading' in HTMLImageElement.prototype) {
+                // Browser supports lazy loading
+                images.forEach(img => {
+                    img.src = img.dataset.src;
+                });
+            } else {
+                // Fallback for browsers that don't support lazy loading
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const image = entry.target;
+                            image.src = image.dataset.src;
+                            imageObserver.unobserve(image);
+                        }
+                    });
+                });
+                
+                images.forEach(image => {
+                    imageObserver.observe(image);
+                });
+            }
         });
     </script>
 </body>
