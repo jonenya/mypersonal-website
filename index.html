@@ -87,24 +87,28 @@
 
 
 
-        /* Add to your existing CSS */
-#about, #services, #solutions, #portfolio, #contact, .footer {
+     /* Fix for content visibility */
+#about, #services, #solutions, #portfolio, #contact {
     position: relative;
     background: linear-gradient(135deg, var(--darker), var(--dark));
-    z-index: 1;
+    z-index: 10;
 }
 
-/* Add a subtle overlay effect */
-#about::before, #services::before, #solutions::before, 
-#portfolio::before, #contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(2, 12, 27, 0.7);
-    z-index: -1;
+.stats-container, .services-grid, .solutions-grid, 
+.portfolio-gallery, .contact-container, .footer-content {
+    position: relative;
+    z-index: 20;
+}
+
+/* Ensure canvas stays behind everything */
+#bgCanvas {
+    z-index: -999 !important;
+}
+
+/* Additional fix for 3D transform sections */
+.flip-card, .service-card, .solution-card, .portfolio-item, .contact-form {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
 }
         .logo {
             position: relative;
@@ -1802,6 +1806,21 @@
     </footer>
     
     <script>
+        // Quick fix for content visibility
+document.addEventListener('DOMContentLoaded', function() {
+    // Ensure sections have proper z-index
+    const sections = document.querySelectorAll('section, .footer');
+    sections.forEach(section => {
+        section.style.position = 'relative';
+        section.style.zIndex = '10';
+    });
+    
+    // Lower the canvas z-index further
+    const canvas = document.getElementById('bgCanvas');
+    if (canvas) {
+        canvas.style.zIndex = '-100';
+    }
+});
         // 3D Background Effect
         const canvas = document.getElementById('bgCanvas');
         const ctx = canvas.getContext('2d');
@@ -2189,4 +2208,5 @@
     </script>
 </body>
 </html>
+
 
