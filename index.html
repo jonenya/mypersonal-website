@@ -1357,6 +1357,28 @@
                 transition-duration: 0.01ms !important;
             }
         }
+
+
+
+        /* URGENT FIX: Make sections visible */
+#about, #services, #solutions, #portfolio, #contact, .footer {
+    background: rgb(2, 12, 39) !important;
+    position: relative !important;
+    z-index: 100 !important;
+}
+
+/* Force content to appear on top */
+#bgCanvas {
+    z-index: -9999 !important;
+    opacity: 0.7;
+}
+
+/* Add solid backgrounds to all content containers */
+.stats-container, .services-grid, .solutions-grid, 
+.portfolio-gallery, .contact-container {
+    position: relative;
+    z-index: 1000;
+}
     </style>
 </head>
 <body>
@@ -2202,6 +2224,7 @@
 </script>
 </body>
 </html>
+
 
 
 
