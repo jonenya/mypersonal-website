@@ -84,7 +84,28 @@
             padding: 1rem 8%;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
-        
+
+
+
+        /* Add to your existing CSS */
+#about, #services, #solutions, #portfolio, #contact, .footer {
+    position: relative;
+    background: linear-gradient(135deg, var(--darker), var(--dark));
+    z-index: 1;
+}
+
+/* Add a subtle overlay effect */
+#about::before, #services::before, #solutions::before, 
+#portfolio::before, #contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2, 12, 27, 0.7);
+    z-index: -1;
+}
         .logo {
             position: relative;
             font-size: 1.75rem;
@@ -2168,3 +2189,4 @@
     </script>
 </body>
 </html>
+
