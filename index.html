@@ -87,29 +87,7 @@
 
 
 
-     /* Fix for content visibility */
-#about, #services, #solutions, #portfolio, #contact {
-    position: relative;
-    background: linear-gradient(135deg, var(--darker), var(--dark));
-    z-index: 10;
-}
-
-.stats-container, .services-grid, .solutions-grid, 
-.portfolio-gallery, .contact-container, .footer-content {
-    position: relative;
-    z-index: 20;
-}
-
-/* Ensure canvas stays behind everything */
-#bgCanvas {
-    z-index: -999 !important;
-}
-
-/* Additional fix for 3D transform sections */
-.flip-card, .service-card, .solution-card, .portfolio-item, .contact-form {
-    background: var(--glass);
-    backdrop-filter: blur(12px);
-}
+  
         .logo {
             position: relative;
             font-size: 1.75rem;
@@ -2224,6 +2202,7 @@
 </script>
 </body>
 </html>
+
 
 
 
