@@ -5,27 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
-    <!-- refined title / seo with real projects-->
-    <title>Nyaga Softwares – Portfolio | Web & App Dev Kenya | 15+ Live Projects</title>
-    <meta name="description" content="🚀 See Nyaga Softwares portfolio: sicons.co.ke, hanicardeals, dronemark, bahmby, bridget-blue, prostaffkenya, mato.co.ke, sashfresh, digitonemusicgroup, neotech.ac.ke, nebraslimited. Elite Kenyan dev team.">
-    <meta name="keywords" content="best web development company kenya, portfolio, ian nyaga, sicons, hanicardeals, dronemark, bahmby, neotech">
+    <!-- SEO / Title -->
+    <title>Nyaga Softwares – Elite Web & App Dev | Showcase of Live Projects</title>
+    <meta name="description" content="🚀 Kenya's premium software house. See our live work: sicons.co.ke (cooling & ACs), hanicardeals (car dealer), dronemark (predictive ecommerce), bahmby & bridget-blue (musicians), mato (political), and more.">
+    <meta name="keywords" content="best web development company kenya, mobile app nairobi, custom software, portfolio, ian nyaga, web design showcase, cooling company website, car dealer website, musicians website">
     <link rel="canonical" href="https://nyagasoftwares.co.ke">
     
-    <!-- fonts & icons -->
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- three.js & gsap from cdn -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <!-- Three.js & GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; overflow-x: hidden; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
         body {
             font-family: "Inter", system-ui, -apple-system, sans-serif;
             background: #010314;
@@ -34,26 +41,28 @@
             overflow-x: hidden;
             position: relative;
         }
-        /* 3D canvas always behind */
         #bg-canvas {
             position: fixed;
-            top: 0; left: 0;
-            width: 100vw; height: 100vh;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             z-index: -2;
             pointer-events: none;
-            opacity: 0.7;
+            opacity: 0.6;
         }
         .noise::before {
             content: "";
             position: fixed;
-            top: 0; left: 0;
-            width: 100vw; height: 100vh;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
             background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMC4wMjUiIC8+PC9zdmc+');
-            opacity: 0.15;
+            opacity: 0.12;
             z-index: -1;
             pointer-events: none;
         }
-        
         :root {
             --primary: #0066ff;
             --secondary: #00f0c0;
@@ -62,17 +71,18 @@
             --darker: #050a14;
             --glass: rgba(8, 20, 40, 0.75);
             --glass-edge: rgba(0, 240, 192, 0.2);
-            --shadow: 0 20px 40px -12px rgba(0,0,0,0.6);
-            --glow: 0 0 20px rgba(0,240,192,0.3);
+            --shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.6);
+            --glow: 0 0 20px rgba(0, 240, 192, 0.3);
         }
-
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #010314; }
         ::-webkit-scrollbar-thumb { background: #00f0c0; border-radius: 8px; }
 
         .header {
             position: fixed;
-            top: 20px; left: 5%; right: 5%;
+            top: 20px;
+            left: 5%;
+            right: 5%;
             width: 90%;
             padding: 1rem 2rem;
             background: rgba(5, 10, 20, 0.7);
@@ -84,32 +94,45 @@
             align-items: center;
             z-index: 999;
             box-shadow: 0 15px 40px -15px black;
-            transition: all 0.4s cubic-bezier(0.2,0.9,0.3,1);
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
         }
-        .header.scrolled { background: rgba(2, 6, 16, 0.9); border-color: #00f0c0; top: 10px; }
+        .header.scrolled {
+            background: rgba(2, 6, 16, 0.95);
+            border-color: #00f0c0;
+            top: 10px;
+        }
         .logo {
-            font-size: 1.8rem; font-weight: 700;
-            display: flex; align-items: center; gap: 10px;
-            color: white; text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
         }
         .logo span { color: var(--secondary); font-weight: 800; }
         .logo-icon {
             background: linear-gradient(145deg, #0066ff, #00f0c0);
-            width: 42px; height: 42px;
+            width: 42px;
+            height: 42px;
             border-radius: 14px;
             display: flex;
-            align-items: center; justify-content: center;
+            align-items: center;
+            justify-content: center;
             transform: rotate(5deg);
             transition: 0.3s;
         }
         .logo:hover .logo-icon { transform: rotate(15deg) scale(1.05); }
-        
         .navbar {
-            display: flex; align-items: center; gap: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         .navbar a {
-            color: #eef4ff; text-decoration: none;
-            font-weight: 500; padding: 0.6rem 1.2rem;
+            color: #eef4ff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.6rem 1.2rem;
             border-radius: 40px;
             transition: 0.3s;
             font-size: 1rem;
@@ -120,189 +143,280 @@
         }
         .cta-btn {
             background: linear-gradient(145deg, #0066ff, #00c8b0);
-            color: white; border: none; padding: 0.7rem 2rem;
-            border-radius: 40px; font-weight: 600;
+            color: white;
+            border: none;
+            padding: 0.7rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
             box-shadow: 0 10px 20px -8px #0066ff;
-            transition: 0.3s; margin-left: 1rem;
+            transition: 0.3s;
+            margin-left: 1rem;
         }
         .cta-btn:hover { scale: 1.05; box-shadow: 0 15px 25px -5px #00f0c0; }
         .mobile-menu-btn {
-            display: none; background: transparent; border: none;
-            color: white; font-size: 2rem; cursor: pointer;
+            display: none;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
         }
         @media (max-width: 900px) {
-            .navbar { display: none; flex-direction: column; position: absolute; top: 70px; left: 5%; width: 90%; background: rgba(5,10,25,0.95); backdrop-filter: blur(20px); border-radius: 30px; padding: 1rem; border: 1px solid var(--glass-edge); }
+            .navbar {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 5%;
+                width: 90%;
+                background: rgba(5, 10, 25, 0.95);
+                backdrop-filter: blur(20px);
+                border-radius: 30px;
+                padding: 1rem;
+                border: 1px solid var(--glass-edge);
+            }
             .navbar.active { display: flex; }
             .navbar a { width: 100%; text-align: center; }
             .cta-btn { margin: 0.5rem 0 0; width: 100%; }
             .mobile-menu-btn { display: block; }
         }
-
-        section { position: relative; z-index: 5; padding: 140px 8% 100px; }
-        .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 180px; background: radial-gradient(circle at 70% 30%, rgba(0,102,255,0.15), transparent 50%); }
+        section {
+            position: relative;
+            z-index: 5;
+            padding: 140px 8% 100px;
+        }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 180px;
+            background: radial-gradient(circle at 70% 30%, rgba(0, 102, 255, 0.12), transparent 50%);
+        }
         .hero-content { max-width: 750px; }
         .hero-badge {
-            background: rgba(0,240,192,0.08); border: 1px solid rgba(0,240,192,0.3);
-            backdrop-filter: blur(5px); border-radius: 60px; padding: 0.6rem 1.8rem;
-            display: inline-flex; gap: 10px; font-weight: 600; color: var(--secondary);
+            background: rgba(0, 240, 192, 0.08);
+            border: 1px solid rgba(0, 240, 192, 0.3);
+            backdrop-filter: blur(5px);
+            border-radius: 60px;
+            padding: 0.6rem 1.8rem;
+            display: inline-flex;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--secondary);
             margin-bottom: 2rem;
         }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 5.2rem); font-weight: 800; line-height: 1.1; background: linear-gradient(to right, #fff, #b0f0ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.2rem; }
-        .hero h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); color: #cbd5ff; font-weight: 400; margin-bottom: 1.8rem; }
-        .hero p { font-size: 1.25rem; color: #b0c0e0; max-width: 600px; }
-        
-        .btn-group { display: flex; flex-wrap: wrap; gap: 20px; margin: 2.5rem 0; }
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5.2rem);
+            font-weight: 800;
+            line-height: 1.1;
+            background: linear-gradient(to right, #fff, #b0f0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.2rem;
+        }
+        .hero h2 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: #cbd5ff;
+            font-weight: 400;
+            margin-bottom: 1.8rem;
+        }
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 2.5rem 0;
+        }
         .btn {
-            padding: 1rem 2.8rem; border-radius: 60px; font-weight: 600;
-            text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
-            transition: 0.3s; border: none; cursor: pointer;
-            background: linear-gradient(145deg, #0066ff, #00c3b0); color: white;
+            padding: 1rem 2.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            background: linear-gradient(145deg, #0066ff, #00c3b0);
+            color: white;
             box-shadow: 0 20px 30px -10px #0066ff;
         }
-        .btn-outline { background: transparent; border: 2px solid var(--secondary); color: var(--secondary); box-shadow: none; }
-        .btn-outline:hover { background: rgba(0,240,192,0.1); scale: 1.05; }
-
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            box-shadow: none;
+        }
+        .btn-outline:hover { background: rgba(0, 240, 192, 0.1); scale: 1.05; }
         .section-title {
-            font-size: clamp(2.5rem,5vw,4rem); font-weight: 700; line-height: 1.2;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.2;
             background: linear-gradient(145deg, #fff, #a0e0ff);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 4rem; position: relative;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4rem;
+            position: relative;
         }
         .section-title::after {
-            content: ''; position: absolute; bottom: -15px; left: 0; width: 120px; height: 4px;
-            background: linear-gradient(90deg, #0066ff, #00f0c0); border-radius: 4px;
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, #0066ff, #00f0c0);
+            border-radius: 4px;
         }
-
         .grid-3, .grid-4 { display: grid; gap: 30px; }
         .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
         .grid-4 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-
         .card {
-            background: rgba(8, 18, 34, 0.6); backdrop-filter: blur(12px);
+            background: rgba(8, 18, 34, 0.6);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(0, 240, 192, 0.1);
-            border-radius: 32px; padding: 2.2rem 1.8rem;
-            transition: 0.4s cubic-bezier(0.2,0.9,0.3,1);
+            border-radius: 32px;
+            padding: 2.2rem 1.8rem;
+            transition: 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
             box-shadow: 0 25px 40px -20px black;
         }
         .card:hover { transform: translateY(-12px); border-color: var(--secondary); box-shadow: 0 30px 60px -15px #00f0c0; }
         .card-icon { font-size: 3rem; color: var(--secondary); margin-bottom: 1.5rem; }
-        .card h3 { font-size: 1.8rem; margin-bottom: 1rem; }
         
-        /* PROFESSIONAL PORTFOLIO GRID - REAL SITES */
+        /* Portfolio premium grid */
         .portfolio-showcase {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
-        .project-card {
-            background: rgba(5, 12, 22, 0.7);
-            backdrop-filter: blur(10px);
-            border-radius: 32px;
+        .portfolio-card {
+            background: rgba(5, 12, 22, 0.75);
+            backdrop-filter: blur(8px);
+            border-radius: 2rem;
             overflow: hidden;
             border: 1px solid rgba(0, 240, 192, 0.2);
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1);
-            box-shadow: 0 20px 35px -15px rgba(0,0,0,0.5);
-        }
-        .project-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            border-color: #00f0c0;
-            box-shadow: 0 30px 45px -12px #00f0c033;
-        }
-        .project-img {
-            height: 220px;
-            background: linear-gradient(135deg, #0b1a2f, #01081a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            transition: all 0.4s ease;
             position: relative;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: #00f0c0;
+            box-shadow: 0 25px 45px -12px #00f0c0;
+        }
+        .portfolio-img-wrapper {
+            height: 220px;
             overflow: hidden;
+            position: relative;
         }
-        .project-img i {
-            font-size: 4.5rem;
-            color: #00f0c0;
-            opacity: 0.7;
-            transition: 0.3s;
+        .portfolio-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
         }
-        .project-card:hover .project-img i {
-            transform: scale(1.1);
-            opacity: 1;
-            filter: drop-shadow(0 0 12px #00f0c0);
-        }
-        .project-info {
-            padding: 1.8rem;
-        }
-        .project-info h3 {
-            font-size: 1.7rem;
+        .portfolio-card:hover .portfolio-img-wrapper img { transform: scale(1.08); }
+        .portfolio-info { padding: 1.6rem; }
+        .portfolio-info h3 {
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
             color: #ffffff;
             letter-spacing: -0.3px;
         }
-        .project-domain {
+        .portfolio-info p {
+            color: #b0c4de;
             font-size: 0.9rem;
-            color: var(--secondary);
-            font-family: monospace;
-            margin-bottom: 1rem;
-            display: inline-block;
-            background: rgba(0,240,192,0.1);
-            padding: 0.2rem 1rem;
-            border-radius: 30px;
-        }
-        .project-info p {
-            color: #b3c7e3;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             line-height: 1.4;
         }
-        .project-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        .live-link {
-            background: rgba(0,102,255,0.2);
-            padding: 0.5rem 1.5rem;
-            border-radius: 40px;
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: 0.3s;
-            border: 1px solid rgba(0,240,192,0.3);
+        .portfolio-link {
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1.5px solid var(--secondary);
+            transition: 0.2s;
         }
-        .live-link:hover {
-            background: var(--secondary);
+        .portfolio-link:hover { gap: 12px; color: #ffffff; }
+        .badge-live {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #00f0c0cc;
+            backdrop-filter: blur(4px);
+            padding: 0.3rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: bold;
             color: #010314;
-            border-color: var(--secondary);
+            z-index: 2;
         }
-        .stats { display: flex; gap: 30px; flex-wrap: wrap; margin-top: 3rem; }
-        .stat-item { flex: 1; background: rgba(255,255,255,0.02); border-radius: 24px; padding: 1.8rem; border: 1px solid #1f2a40; }
-        .stat-number { font-size: 3.5rem; font-weight: 800; color: var(--secondary); line-height: 1; }
-        .contact-form { background: rgba(8,18,34,0.7); backdrop-filter: blur(20px); border-radius: 40px; padding: 3rem; border: 1px solid rgba(0,240,192,0.2); }
-        .form-group { position: relative; margin-bottom: 2rem; }
+        .contact-form {
+            background: rgba(8, 18, 34, 0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 40px;
+            padding: 3rem;
+            border: 1px solid rgba(0, 240, 192, 0.2);
+        }
+        .form-group {
+            position: relative;
+            margin-bottom: 2rem;
+        }
         .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 1.2rem 1.5rem; background: rgba(0,0,0,0.3); border: 1px solid #2d3a52; border-radius: 30px; color: white; font-size: 1rem; outline: none; transition: 0.3s;
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid #2d3a52;
+            border-radius: 30px;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
         }
         .form-group label {
-            position: absolute; left: 20px; top: 16px; color: #7e8aa8; transition: 0.3s; pointer-events: none;
+            position: absolute;
+            left: 20px;
+            top: 16px;
+            color: #7e8aa8;
+            transition: 0.3s;
+            pointer-events: none;
         }
         .form-group input:focus ~ label, .form-group input:not(:placeholder-shown) ~ label,
         .form-group select:focus ~ label, .form-group select:valid ~ label,
         .form-group textarea:focus ~ label, .form-group textarea:not(:placeholder-shown) ~ label {
-            top: -10px; left: 15px; font-size: 0.8rem; background: #0b1424; padding: 0 8px; color: var(--secondary);
+            top: -10px;
+            left: 15px;
+            font-size: 0.8rem;
+            background: #0b1424;
+            padding: 0 8px;
+            color: var(--secondary);
         }
-        .footer { background: #040a18; border-radius: 60px 60px 0 0; padding: 4rem 8% 2rem; border-top: 1px solid #1f2a40; margin-top: 3rem; }
-        @media (max-width: 1000px) {
-            section { padding: 120px 5% 70px; }
+        .footer {
+            background: #040a18;
+            border-radius: 60px 60px 0 0;
+            padding: 4rem 8% 2rem;
+            border-top: 1px solid #1f2a40;
+            margin-top: 3rem;
         }
-        @media (max-width: 600px) {
-            .header { padding: 0.8rem 1.5rem; }
-            .btn-group { flex-direction: column; }
-            .portfolio-showcase { grid-template-columns: 1fr; }
+        @media (max-width: 1000px) { section { padding: 120px 5% 70px; } }
+        @media (max-width: 600px) { .header { padding: 0.8rem 1.5rem; } .btn-group { flex-direction: column; } }
+        .stats {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 2rem;
         }
-        .seo-hidden { display: none; }
+        .stat-item {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            padding: 1.5rem;
+            border: 1px solid #1f2a40;
+            text-align: center;
+        }
+        .stat-number { font-size: 3rem; font-weight: 800; color: var(--secondary); }
     </style>
 </head>
 <body class="noise">
@@ -316,77 +430,142 @@
         <button class="mobile-menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
         <nav class="navbar" id="navbar">
             <a href="#home" class="active">Home</a>
-            <a href="#portfolio">Portfolio</a>
+            <a href="#about">About</a>
             <a href="#services">Services</a>
-            <a href="#solutions">Solutions</a>
+            <a href="#portfolio-showcase">Portfolio</a>
             <a href="#contact" class="cta-btn">Get quote</a>
         </nav>
     </header>
 
-    <!-- hero section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <div class="hero-badge"><i class="fa-regular fa-star"></i> #1 software company Kenya</div>
-            <h1>Kenya's Finest<br>Digital Portfolio</h1>
-            <h2>15+ Live Platforms · Web · AI · Mobile</h2>
-            <p>From eCommerce to EdTech — Nyaga Softwares builds high-impact digital solutions. See our real-world work below.</p>
+            <div class="hero-badge"><i class="fa-regular fa-star"></i> Live portfolio · 12+ elite brands</div>
+            <h1>We Build Kenya's<br>Most Innovative Platforms</h1>
+            <h2>Cooling systems · Car dealerships · Predictive engines · Musicians · Political campaigns</h2>
+            <p>Explore real projects crafted by Ian Nyaga's team — from AC companies to AI e‑commerce engines.</p>
             <div class="btn-group">
-                <a href="#portfolio" class="btn"><i class="fas fa-eye"></i> Explore portfolio</a>
+                <a href="#portfolio-showcase" class="btn"><i class="fas fa-globe"></i> Explore live work</a>
                 <a href="tel:+254700239404" class="btn-outline btn"><i class="fas fa-phone-alt"></i> +254 700 239 404</a>
             </div>
-            <div style="display: flex; gap: 15px; color: #00f0c0; margin-top: 1rem;">
-                <span><i class="fas fa-check-circle"></i> 200+ projects</span>
-                <span><i class="fas fa-check-circle"></i> 15+ live flagship sites</span>
+            <div style="display: flex; gap: 20px; margin-top: 1.2rem;">
+                <span><i class="fas fa-check-circle" style="color:#00f0c0"></i> 200+ projects</span>
+                <span><i class="fas fa-trophy" style="color:#00f0c0"></i> Top rated Kenya</span>
             </div>
         </div>
     </section>
 
-    <!-- PROFESSIONAL PORTFOLIO SECTION WITH REAL PROJECTS -->
-    <section id="portfolio">
-        <h2 class="section-title">Our Live Projects & Case Studies</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #b8d0f0;">Real platforms crafted for Kenyan & global brands — each built with precision, speed, and modern architecture.</p>
-        <div class="portfolio-showcase" id="realProjectsContainer">
-            <!-- projects will be injected via JS but we also render static for SEO; dual approach -->
+    <section id="about">
+        <h2 class="section-title">Crafted by experts</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 50px; align-items: center;">
+            <div style="flex: 1; min-width: 260px;">
+                <div style="background: linear-gradient(145deg, #0066ff22, #00f0c022); border-radius: 2rem; padding: 2rem; text-align: center;">
+                    <i class="fas fa-code" style="font-size: 4rem; color: #00f0c0;"></i>
+                    <h3 style="margin-top: 1rem;">Ian Nyaga</h3>
+                    <p>Founder & Lead Architect</p>
+                </div>
+            </div>
+            <div style="flex: 1.5;">
+                <p style="font-size: 1.3rem; line-height: 1.5;">Nyaga Softwares is Kenya's premier development agency — we engineer bespoke solutions for cooling companies, car dealers, musicians, political campaigns, and predictive e‑commerce engines. Every project is a statement of quality and innovation.</p>
+                <div class="stats">
+                    <div class="stat-item"><div class="stat-number">12+</div><div>Live premium sites</div></div>
+                    <div class="stat-item"><div class="stat-number">100%</div><div>Client retention</div></div>
+                    <div class="stat-item"><div class="stat-number">24/7</div><div>Support</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">Core expertise</h2>
+        <div class="grid-3">
+            <div class="card"><div class="card-icon"><i class="fas fa-laptop-code"></i></div><h3>Web Dev</h3><p>React, Laravel, e‑commerce, PWAs with stunning UX.</p></div>
+            <div class="card"><div class="card-icon"><i class="fas fa-mobile-alt"></i></div><h3>Mobile Apps</h3><p>Flutter, React Native – iOS & Android perfection.</p></div>
+            <div class="card"><div class="card-icon"><i class="fas fa-brain"></i></div><h3>AI & ERP</h3><p>Predictive engines, CRM, POS, custom dashboards.</p></div>
+        </div>
+    </section>
+
+    <!-- PROFESSIONAL PORTFOLIO with corrected descriptions and relevant images -->
+    <section id="portfolio-showcase">
+        <h2 class="section-title">Live projects · industry-specific excellence</h2>
+        <p style="margin-bottom: 2rem; font-size: 1.2rem;">Each platform is tailored to its niche — from cooling & AC solutions to musician showcases and political campaigns.</p>
+        <div class="portfolio-showcase">
+            <!-- Sicons: cooling & AC company -->
+            <div class="portfolio-card">
+                <div class="portfolio-img-wrapper"><img src="https://images.unsplash.com/photo-1629131726692-1accd0c53ce0?w=600&auto=format" alt="Sicons cooling and ACs"></div>
+                <div class="badge-live"><i class="fas fa-link"></i> Live</div>
+                <div class="portfolio-info"><h3>Sicons.co.ke</h3><p>Premium cooling & AC solutions company. Showcasing industrial ACs, installation services, and HVAC expertise.</p><a href="https://sicons.co.ke" target="_blank" rel="noopener" class="portfolio-link">Visit website <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <!-- Hanicardeals: car dealer showcase -->
+            <div class="portfolio-card">
+                <div class="portfolio-img-wrapper"><img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&auto=format" alt="Hanicard car dealer"></div>
+                <div class="badge-live"><i class="fas fa-link"></i> Live</div>
+                <div class="portfolio-info"><h3>Hanicardeals.co.ke</h3><p>Elite car dealer showcase — inventory of premium vehicles, test drive booking, and dealership management.</p><a href="https://hanicardeals.co.ke" target="_blank" class="portfolio-link">Explore cars <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <!-- Dronemark: predictive engine + ecommerce solutions -->
+            <div class="portfolio-card">
+                <div class="portfolio-img-wrapper"><img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&auto=format" alt="Dronemark predictive AI ecommerce"></div>
+                <div class="badge-live"><i class="fas fa-link"></i> Live</div>
+                <div class="portfolio-info"><h3>Dronemark.co.ke</h3><p>Predictive engine & e‑commerce solutions — AI-driven recommendations, smart inventory forecasting, seamless storefront.</p><a href="https://dronemark.co.ke" target="_blank" class="portfolio-link">View engine <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <!-- Bahmby: musician's website -->
+            <div class="portfolio-card">
+                <div class="portfolio-img-wrapper"><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&auto=format" alt="Bahmby musician"></div>
+                <div class="badge-live"><i class="fas fa-link"></i> Live</div>
+                <div class="portfolio-info"><h3>Bahmby.com</h3><p>Musician's official website — tour dates, music releases, biography, and immersive audio-visual experience.</p><a href="https://bahmby.com" target="_blank" class="portfolio-link">Discover music <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <!-- Bridget Blue: musician's website -->
+            <div class="portfolio-card">
+                <div class="portfolio-img-wrapper"><img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&auto=format" alt="Bridget Blue musician"></div>
+                <div class="badge-live"><i class="fas fa-link"></i> Live</div>
+                <div class="portfolio-info"><h3>Bridget-blue.com</h3><p>Musician's portfolio & media hub — showcasing singles, videos, and booking for events.</p><a href="https://bridget-blue.com" target="_blank" class="portfolio-link">Listen now <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <!-- Prostaff Kenya: recruitment (ok) -->
+            <div class="portfolio-card">
+                <div class="portfolio-img-wrapper"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format" alt="Prostaff Kenya recruitment"></div>
+                <div class="badge-live"><i class="fas fa-link"></i> Live</div>
+                <div class="portfolio-info"><h3>Prostaffkenya.co.ke</h3><p>HR & recruitment platform — job listings, talent matching, employer dashboards.</p><a href="https://prostaffkenya.co.ke" target="_blank" class="portfolio-link">Explore <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <!-- Mato: political website -->
+            <div class="portfolio-card">
+                <div class="portfolio-img-wrapper"><img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=600&auto=format" alt="Mato political campaign"></div>
+                <div class="badge-live"><i class="fas fa-link"></i> Live</div>
+                <div class="portfolio-info"><h3>Mato.co.ke</h3><p>Political campaign & advocacy platform — manifestos, grassroots engagement, real-time updates.</p><a href="https://mato.co.ke" target="_blank" class="portfolio-link">View campaign <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <!-- Sash Fresh Groceries (ecommerce grocery) -->
+            <div class="portfolio-card">
+                <div class="portfolio-img-wrapper"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&auto=format" alt="Sash Fresh Groceries"></div>
+                <div class="badge-live"><i class="fas fa-link"></i> Live</div>
+                <div class="portfolio-info"><h3>Sashfreshgroceries.co.ke</h3><p>Online grocery ordering system with live inventory and delivery scheduling.</p><a href="https://sashfreshgroceries.co.ke" target="_blank" class="portfolio-link">Shop now <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <!-- Digitone Music Group -->
+            <div class="portfolio-card">
+                <div class="portfolio-img-wrapper"><img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&auto=format" alt="Digitone Music Group"></div>
+                <div class="badge-live"><i class="fas fa-link"></i> Live</div>
+                <div class="portfolio-info"><h3>Digitonemusicgroup.com</h3><p>Music production label & artist management — immersive studio showcase.</p><a href="https://digitonemusicgroup.com/index.html" target="_blank" class="portfolio-link">Visit label <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <!-- Neotech Academy -->
+            <div class="portfolio-card">
+                <div class="portfolio-img-wrapper"><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&auto=format" alt="Neotech Academy"></div>
+                <div class="badge-live"><i class="fas fa-link"></i> Live</div>
+                <div class="portfolio-info"><h3>Neotech.ac.ke</h3><p>Educational institution portal — e‑learning, course management, student resources.</p><a href="https://neotech.ac.ke" target="_blank" class="portfolio-link">View academy <i class="fas fa-arrow-right"></i></a></div>
+            </div>
+            <!-- Nebras Limited -->
+            <div class="portfolio-card">
+                <div class="portfolio-img-wrapper"><img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600&auto=format" alt="Nebras Limited engineering"></div>
+                <div class="badge-live"><i class="fas fa-link"></i> Live</div>
+                <div class="portfolio-info"><h3>Nebraslimited.co.ke</h3><p>Corporate engineering & consulting — industrial solutions, project portfolio.</p><a href="https://nebraslimited.co.ke" target="_blank" class="portfolio-link">Discover <i class="fas fa-arrow-right"></i></a></div>
+            </div>
         </div>
         <div style="margin-top: 3rem; text-align: center;">
-            <a href="#contact" class="btn" style="background: #00c3b0;">🚀 Launch your own project</a>
+            <a href="#contact" class="btn" style="background: linear-gradient(145deg,#00c8b0,#0066ff);">Start your project →</a>
         </div>
     </section>
 
-    <!-- services quick -->
-    <section id="services">
-        <h2 class="section-title">Our core services</h2>
-        <div class="grid-3">
-            <div class="card"><div class="card-icon"><i class="fas fa-laptop-code"></i></div><h3>Web Dev</h3><p>React, Vue, Laravel, e‑commerce, PWAs. Kenya's best websites.</p></div>
-            <div class="card"><div class="card-icon"><i class="fas fa-mobile-alt"></i></div><h3>Mobile apps</h3><p>iOS, Android, Flutter, React Native — smooth & scalable.</p></div>
-            <div class="card"><div class="card-icon"><i class="fas fa-brain"></i></div><h3>AI & custom software</h3><p>Machine learning, chatbots, ERP, CRM, POS systems.</p></div>
-            <div class="card"><div class="card-icon"><i class="fas fa-chart-line"></i></div><h3>SEO & digital</h3><p>Rank #1 on Google. Full‑stack digital marketing.</p></div>
-            <div class="card"><div class="card-icon"><i class="fas fa-cloud"></i></div><h3>Cloud & DevOps</h3><p>AWS, Azure, CI/CD — bulletproof infrastructure.</p></div>
-            <div class="card"><div class="card-icon"><i class="fas fa-shield-alt"></i></div><h3>Cybersecurity</h3><p>Pen testing, compliance, secure code.</p></div>
-        </div>
-    </section>
-
-    <!-- industry solutions -->
-    <section id="solutions" style="background: radial-gradient(circle at 30% 50%, #0b1a2f, transparent);">
-        <h2 class="section-title">Industry solutions</h2>
-        <div class="grid-4">
-            <div class="card"><i class="fas fa-store card-icon"></i><h4>POS & retail</h4><p>Inventory, M‑Pesa integration.</p></div>
-            <div class="card"><i class="fas fa-heartbeat card-icon"></i><h4>Healthtech</h4><p>hospital mgmt, telemedicine.</p></div>
-            <div class="card"><i class="fas fa-university card-icon"></i><h4>Fintech</h4><p>banking, loan apps, SACCO.</p></div>
-            <div class="card"><i class="fas fa-truck card-icon"></i><h4>Logistics</h4><p>tracking, fleet management.</p></div>
-            <div class="card"><i class="fas fa-graduation-cap card-icon"></i><h4>EdTech</h4><p>e‑learning, school portals.</p></div>
-            <div class="card"><i class="fas fa-city card-icon"></i><h4>Real estate</h4><p>property mgmt, listings.</p></div>
-            <div class="card"><i class="fas fa-crown card-icon"></i><h4>Hospitality</h4><p>hotel booking, restaurant POS.</p></div>
-            <div class="card"><i class="fas fa-chart-pie card-icon"></i><h4>Analytics</h4><p>BI, dashboards, AI insights.</p></div>
-        </div>
-    </section>
-
-    <!-- contact -->
     <section id="contact">
-        <h2 class="section-title">Let's build something amazing</h2>
+        <h2 class="section-title">Let’s build your digital legacy</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 50px;">
             <div style="flex: 1; min-width: 280px;">
-                <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Nairobi office</h3>
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Nairobi HQ</h3>
                 <p><i class="fas fa-envelope" style="color: var(--secondary); width: 30px;"></i> contact@nyagasoftwares.co.ke</p>
                 <p><i class="fas fa-phone-alt" style="color: var(--secondary);"></i> +254 700 239 404</p>
                 <p><i class="fas fa-map-marker-alt" style="color: var(--secondary);"></i> Nairobi, Kenya (remote & onsite)</p>
@@ -398,10 +577,29 @@
             </div>
             <div style="flex: 2;" class="contact-form">
                 <form id="contact-form">
-                    <div class="form-group"><input type="text" id="name" placeholder=" " required><label>Full name / company</label></div>
-                    <div class="form-group"><input type="email" id="email" placeholder=" " required><label>Email</label></div>
-                    <div class="form-group"><select id="service" required><option value="" selected disabled hidden></option><option>Web development</option><option>Mobile app</option><option>Custom software / ERP</option><option>POS system</option><option>Other</option></select><label>I need...</label></div>
-                    <div class="form-group"><textarea id="message" rows="4" placeholder=" " required></textarea><label>Tell us about your project</label></div>
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder=" " required>
+                        <label for="name">Full name / company</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder=" " required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="service" required>
+                            <option value="" selected disabled hidden></option>
+                            <option>Web development</option>
+                            <option>Mobile app</option>
+                            <option>Custom software / ERP</option>
+                            <option>E-commerce / POS</option>
+                            <option>Other</option>
+                        </select>
+                        <label for="service">I need...</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="4" placeholder=" " required></textarea>
+                        <label for="message">Tell us about your project</label>
+                    </div>
                     <button type="submit" class="btn" style="width: 100%;"><i class="fas fa-rocket"></i> Send message</button>
                     <div id="form-feedback" style="margin-top: 20px;"></div>
                 </form>
@@ -411,83 +609,86 @@
 
     <footer class="footer">
         <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
-            <div><div class="logo" style="font-size: 2rem;"><span class="logo-icon"><i class="fas fa-code"></i></span> Nyaga <span>Softwares</span></div><p style="margin: 20px 0;">#1 software company in Kenya — web, mobile, AI, and future tech.</p></div>
-            <div><h4>Quick</h4><ul style="list-style: none;"><li><a href="#home" style="color:#b0c4de;">Home</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#services">Services</a></li></ul></div>
+            <div style="max-width: 350px;">
+                <div class="logo" style="font-size: 2rem;"><span class="logo-icon"><i class="fas fa-code"></i></span> Nyaga <span>Softwares</span></div>
+                <p style="margin: 20px 0;">Kenya's #1 agency for web, mobile, AI — powering cooling companies, car dealers, musicians, political campaigns and beyond.</p>
+            </div>
+            <div><h4>Explore</h4><ul style="list-style: none;"><li><a href="#home" style="color:#b0c4de; text-decoration:none;">Home</a></li><li><a href="#portfolio-showcase" style="color:#b0c4de;">Portfolio</a></li><li><a href="#contact">Contact</a></li></ul></div>
+            <div><h4>Legal</h4><ul style="list-style: none;"><li>Privacy Policy</li><li>Terms of Service</li></ul></div>
         </div>
-        <div style="text-align: center; margin-top: 50px; border-top: 1px solid #1f2a40; padding-top: 30px; color: #8892b0;">© 2026 Nyaga Softwares — founded by Ian Nyaga, elite engineer. All rights reserved.</div>
+        <div style="text-align: center; margin-top: 50px; border-top: 1px solid #1f2a40; padding-top: 30px; color: #8892b0;">© 2026 Nyaga Softwares — built with excellence by Ian Nyaga.</div>
     </footer>
 
-    <div class="seo-hidden" aria-hidden="true">best web development company kenya, sicons.co.ke, hanicardeals, dronemark, bahmby, bridget-blue, prostaffkenya, mato, sashfresh, digitonemusicgroup, neotech, nebraslimited</div>
-
     <script>
-    (function() {
-        // 3D background
-        const canvas = document.getElementById('bg-canvas');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        const geometry = new THREE.BufferGeometry();
-        const vertices = [];
-        for (let i = 0; i < 800; i++) { vertices.push((Math.random() - 0.5) * 30); vertices.push((Math.random() - 0.5) * 30); vertices.push((Math.random() - 0.5) * 30); }
-        geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-        const particles = new THREE.Points(geometry, new THREE.PointsMaterial({ color: 0x00f0c0, size: 0.05, transparent: true, opacity: 0.5 }));
-        scene.add(particles);
-        camera.position.z = 12;
-        function animate() { requestAnimationFrame(animate); particles.rotation.y += 0.0002; particles.rotation.x += 0.0001; renderer.render(scene, camera); }
-        animate();
-        window.addEventListener('resize', () => { camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
-
-        // REAL PROJECTS DATA (professional portfolio)
-        const projects = [
-            { name: "Sicons Consulting", url: "https://sicons.co.ke", desc: "Corporate website & digital strategy for leading consulting firm.", domain: "consulting / corporate" },
-            { name: "Hanicard Deals", url: "https://hanicardeals.co.ke", desc: "E‑commerce platform with M-Pesa & logistics integration.", domain: "e‑commerce" },
-            { name: "Dronemark Kenya", url: "https://dronemark.co.ke", desc: "Drone tech marketplace & services booking system.", domain: "tech / marketplace" },
-            { name: "Bahmby", url: "https://bahmby.com", desc: "Fashion & lifestyle e‑commerce with modern UI.", domain: "fashion retail" },
-            { name: "Bridget Blue", url: "https://bridget-blue.com", desc: "Creative agency portfolio & client management.", domain: "creative agency" },
-            { name: "Prostaff Kenya", url: "https://prostaffkenya.co.ke", desc: "HR & recruitment solutions portal.", domain: "HR / recruitment" },
-            { name: "Mato", url: "https://mato.co.ke", desc: "Agricultural tech platform for farmers.", domain: "agritech" },
-            { name: "Sash Fresh Groceries", url: "https://sashfreshgroceries.co.ke", desc: "Online grocery delivery with real-time inventory.", domain: "grocery / delivery" },
-            { name: "Digitone Music Group", url: "https://digitonemusicgroup.com/index.html", desc: "Music label & artist showcase.", domain: "entertainment" },
-            { name: "Neotech Academy", url: "https://neotech.ac.ke", desc: "Educational institution portal & LMS.", domain: "edtech" },
-            { name: "Nebras Limited", url: "https://nebraslimited.co.ke", desc: "Corporate engineering & construction site.", domain: "corporate" }
-        ];
-
-        const container = document.getElementById('realProjectsContainer');
-        if(container) {
-            projects.forEach(proj => {
-                const card = document.createElement('div');
-                card.className = 'project-card';
-                // dynamic icon based on category
-                let iconClass = "fas fa-globe";
-                if(proj.domain.includes("e‑commerce") || proj.domain.includes("retail")) iconClass = "fas fa-shopping-cart";
-                else if(proj.domain.includes("tech")) iconClass = "fas fa-microchip";
-                else if(proj.domain.includes("edtech")) iconClass = "fas fa-graduation-cap";
-                else if(proj.domain.includes("corporate")) iconClass = "fas fa-building";
-                else if(proj.domain.includes("creative")) iconClass = "fas fa-palette";
-                else if(proj.domain.includes("agritech")) iconClass = "fas fa-seedling";
-                else iconClass = "fas fa-code-branch";
-                
-                card.innerHTML = `
-                    <div class="project-img">
-                        <i class="${iconClass}"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>${proj.name}</h3>
-                        <span class="project-domain">${proj.domain}</span>
-                        <p>${proj.desc}</p>
-                        <div class="project-links">
-                            <a href="${proj.url}" target="_blank" rel="noopener noreferrer" class="live-link"><i class="fas fa-external-link-alt"></i> Live Preview</a>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(card);
+        (function() {
+            const canvas = document.getElementById('bg-canvas');
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            const geometry = new THREE.BufferGeometry();
+            const vertices = [];
+            for (let i = 0; i < 1200; i++) {
+                vertices.push((Math.random() - 0.5) * 40);
+                vertices.push((Math.random() - 0.5) * 30);
+                vertices.push((Math.random() - 0.5) * 30);
+            }
+            geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+            const material = new THREE.PointsMaterial({ color: 0x00f0c0, size: 0.045, transparent: true, opacity: 0.45 });
+            const particles = new THREE.Points(geometry, material);
+            scene.add(particles);
+            camera.position.z = 14;
+            function animate() {
+                requestAnimationFrame(animate);
+                particles.rotation.y += 0.0003;
+                particles.rotation.x += 0.00015;
+                renderer.render(scene, camera);
+            }
+            animate();
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
             });
-        }
 
-        // header scroll effect
-        window.addEventListener('scroll', () => { const header = document.getElementById('header'); if (window.scrollY > 50) header.classList.add('scrolled'); else header.classList.remove('scrolled'); });
-        const menuBtn = document.getElementById('menuBtn'); const navbar = document.getElementById('navbar');
-        menuBtn.addEventListener('click', () => navbar.classList.toggle('active'));
-        document.querySelectorAll('.navbar a[href^="#"]').forEach(link => { link.addEventListener('click', (e) => { e.preventDefault(); const target = document.querySelector(link.getAttribute('href')); if (target) target.scrollIntoView({ behavior: 's
+            gsap.registerPlugin(ScrollTrigger);
+            window.addEventListener('scroll', () => {
+                const header = document.getElementById('header');
+                if (window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+            });
+            const menuBtn = document.getElementById('menuBtn');
+            const navbar = document.getElementById('navbar');
+            menuBtn.addEventListener('click', () => navbar.classList.toggle('active'));
+            document.querySelectorAll('.navbar a[href^="#"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(link.getAttribute('href'));
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    navbar.classList.remove('active');
+                });
+            });
+            const form = document.getElementById('contact-form');
+            const feedback = document.getElementById('form-feedback');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('button[type="submit"]');
+                const original = btn.innerHTML;
+                btn.innerHTML = '<span class="fa fa-spinner fa-spin"></span> Sending...';
+                btn.disabled = true;
+                setTimeout(() => {
+                    feedback.innerHTML = '<div style="color:#00f0c0;">✓ Thank you! We’ll reach out within 24h.</div>';
+                    form.reset();
+                    btn.innerHTML = original;
+                    btn.disabled = false;
+                    setTimeout(() => feedback.innerHTML = '', 4000);
+                }, 1200);
+            });
+            gsap.utils.toArray('.card, .portfolio-card, .stat-item').forEach((el, i) => {
+                gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 88%' }, y: 35, opacity: 0, duration: 0.55, delay: i * 0.04, ease: 'power2.out' });
+            });
+        })();
+    </script>
+</body>
+</html>
